@@ -9,7 +9,7 @@ type program =
 Program of identifier list * fct_def list * instruction list
 
 type fct_def = 
-string * identifier list * identifier list * instruction list
+Fct of string * identifier list * identifier list * instruction list
 
 type instruction = 
 | Identifiant of string * expression list

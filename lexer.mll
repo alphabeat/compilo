@@ -3,6 +3,9 @@
 }
 
 rule token = parse 
+| "program" { PROGRAM }
+| "function" { FONCTION }
+| "procedure" { PROCEDURE }
 | ['a'-'z''A'-'Z']['a'-'z''A'-'Z']* as identifier { IDENTIFIER(identifier) }
 | "integer" { INT }
 | "boolean" { BOOL }
