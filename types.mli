@@ -1,7 +1,12 @@
+type identifier = string
+
+type t = 
+| Int of integer 
+| Bool of boolean
+| Tableau of t list
+
 type program = 
 Program of identifier list * fct_def list * instruction list
-
-type identifier = string
 
 type fct_def = 
 string * identifier list * identifier list * instruction list
@@ -44,11 +49,6 @@ type bop =
 | Mult 
 | Div 
 | Infstr | Inf | Supstr | Sup | Eq | Neq 
-
-type t = 
-| Int of integer 
-| Bool of bool
-| Array of t list
 
 type primitives = 
 | write
