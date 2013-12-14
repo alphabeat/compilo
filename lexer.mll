@@ -7,21 +7,24 @@ rule token = parse
 | 'integer' { INT }
 | 'boolean' { BOOL }
 | 'Array of (integer | boolean)' { TABLEAU }
-| 'var (['a'-'z''A'-'Z']['a'-'z''A'-'Z']* as v);' { IDENTIFIER(v) }
-| 'if ['a'-'z''A'-'Z']['a'-'z''A'-'Z']* then else ' { COND }
-| 'while' { LOOP }
-| '+' { ADD }
-| '-' { SUB }
-| '*' { MULT }
-| '/' { DIV }
-| '(' { OP }
-| ')' { FP }
+| 'var' { VAR }
+| 'if' { IF }
+| 'then' { THEN }
+| 'else' { ELSE }
+| 'while' { WHILE }
+| 'do' { DO }
+| 'begin' { BEGIN }
+| 'end' { END }
+| ['+' '*' '/' '>' '>=' '<' '>' '>=' '=' '<>']+ { OP }
+| '-' { MOINS }
+| '(' { OUVPAR }
+| ')' { FERPAR }
+| '[' { OUVCRO }
+| ']' { FERCRO }
+| 'true' { VRAI }
+| 'false' { FAUX }
 | 'or' { OU }
 | 'and' { ET }
-| '>' { SUPSTR }
-| '>=' { SUP }
-| '<' { INFSTR }
-| '<=' { INF }
-| '=' { EQ }
-| '<>' { NEQ }
 | ':=' { AFFECT }
+| ':' { PONCT }
+| ',' { PONCT }
