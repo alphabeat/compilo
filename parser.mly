@@ -2,43 +2,27 @@
  open Types
 %{
 
-%token INT 
-%token BOOL
-%token TABLEAU
-%token VAR
-%token IF
-%token THEN
-%token ELSE
-%token WHILE
-%token DO
-%token BEGIN
-%token END
-%token OP
-%token MOINS
-%token OUVPAR
-%token FERPAR
-%token OUVCRO
-%token FERCRO
-%token VRAI
-%token FAUX
-%token OU
-%token ET
-%token NOT
-%token NAO
-%token AFFECT
-%token FDL
-%token VIRG
-%token OUVCOMM
-%token FERCOMM
 %token <string> IDENTIFIER 
+%token INT BOOL TABLEAU
+%token VAR
+%token IF THEN ELSE
+%token WHILE DO
+%token BEGIN END
+%token PLUS MOINS FOIS DIV
+%token SUPSTR SUP INFSTR INF EQ NEQ
+%token OUVPAR FERPAR
+%token OUVCRO FERCRO
+%token VRAI FAUX
+%token OU ET NOT
+%token NAO AFFECT FDL VIRG
+%token OUVCOMM FERCOMM
 
 %start main 
 %type <program> main 
 
-%nonassoc FDL
-%nonassoc VIRG 
-%left PLUS MINUS 
-%left TIMES DIV 
+%nonassoc AFFECT FDL VIRG 
+%left PLUS MOINS 
+%left FOIS DIV 
 
 %% 
 
