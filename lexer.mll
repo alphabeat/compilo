@@ -15,11 +15,16 @@ rule token = parse
 | "do" { DO }
 | "begin" { BEGIN }
 | "end" { END }
-| ['+' '*' '/' '>' '<' '>' '=']+ { OP }
-| ">=" { OP }
-| "<=" { OP }
-| "<>" { OP }
+| '+' { PLUS }
 | '-' { MOINS }
+| '*' { FOIS } 
+| '/' { DIV } 
+| '>' { SUPSTR }
+| ">=" { SUP }
+| '<' { INFSTR }
+| "<=" { INF }
+| '=' { EQ }
+| "<>" { NEQ }
 | '(' { OUVPAR }
 | ')' { FERPAR }
 | '[' { OUVCRO }
