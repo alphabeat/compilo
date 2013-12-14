@@ -14,7 +14,7 @@
 %token OUVCRO FERCRO
 %token VRAI FAUX
 %token OU ET NOT
-%token NAO AFFECT FDL VIRG
+%token NAO AFFECT DEUXP POINTV VIRG
 %token OUVCOMM FERCOMM
 
 %start main 
@@ -30,11 +30,22 @@ main:
  program EOF { $1 } 
 ;
 
-nom_de_la_regle:
- TOKEN1 TOKEN2 autre_regle TOKEN3 { $3 } 
+program:
+	PROGAM var_declaration_list BEGIN END {Program ([$2], [])}
+
+condition:
+	IF condition THEN expression ELSE expression { Cond ($4,$2,$6) } 
 ;
 
-autre_regle:
- TOKEN4 TOKEN5 TOKEN6 autre_regle { $4 } 
- | TOKEN7 TOKEN8 { UnType($1) } 
+boucle:
+	WHILE condition DO expression { Loop ($2,$4) }
+;
+
+var_declaration_list:
+VARIABLE_DECLARATION var_declaration DEUXP TYPE_INT POINTV { $2 }
+;
+
+var_declaration:
+ IDENTIFIER VIRG var_declaration { $1::$3 }
+ IDENTIFIER { [$1] }
 ; 

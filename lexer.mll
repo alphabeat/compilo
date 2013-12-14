@@ -36,8 +36,8 @@ rule token = parse
 | "not" { NOT }
 | "new array of" { NAO }
 | ":=" { AFFECT }
-| ':' { FDL }
-| ';' { FDL }
+| ':' { DEUXP }
+| ';' { POINTV }
 | ',' { VIRG }
 | '{' { OUVCOMM }
 | '}' { FERCOMM }

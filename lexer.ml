@@ -1000,12 +1000,12 @@ let
 
   | 33 ->
 # 39 "lexer.mll"
-      ( FDL )
+      ( DEUXP )
 # 1005 "lexer.ml"
 
   | 34 ->
 # 40 "lexer.mll"
-      ( FDL )
+      ( POINTV )
 # 1010 "lexer.ml"
 
   | 35 ->
