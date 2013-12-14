@@ -15,7 +15,10 @@ rule token = parse
 | 'do' { DO }
 | 'begin' { BEGIN }
 | 'end' { END }
-| ['+' '*' '/' '>' '>=' '<' '>' '>=' '=' '<>']+ { OP }
+| ['+' '*' '/' '>' '<' '>' '=']+ { OP }
+| '>=' { OP }
+| '<=' { OP }
+| '<>' { OP }
 | '-' { MOINS }
 | '(' { OUVPAR }
 | ')' { FERPAR }
@@ -25,6 +28,10 @@ rule token = parse
 | 'false' { FAUX }
 | 'or' { OU }
 | 'and' { ET }
+| 'not' { NOT }
+| 'new array of' { NAO }
 | ':=' { AFFECT }
-| ':' { PONCT }
-| ',' { PONCT }
+| ':' { FDL }
+| ';' { FDL }
+| '{' { OUVCOMM }
+| '}' { FERCOMM }
